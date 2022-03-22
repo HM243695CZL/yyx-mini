@@ -1,0 +1,28 @@
+@import "../../../../base.less";
+.goods-list-container{
+  overflow: auto;
+  .goods-item{
+    border-radius: @baseBorderRadius;
+    padding: @halfBasePadding;
+    .img-box{
+      height: 340px;
+      overflow: hidden;
+      image{
+        border-radius: @baseBorderRadius @baseBorderRadius 0 0;
+        width: 100%;
+        height: 340px;
+      }
+    }
+    .title{
+      padding: @basePadding @halfBasePadding;
+      font-size: @normalSize;
+    }
+    .price{
+      color: @priceColor;
+    }
+    .sell{
+      color: @baseTextColor;
+      font-size: @smallSize;
+    }
+  }
+}

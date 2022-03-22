@@ -5,6 +5,14 @@ export default {
     'pages/shop/index',
     'pages/user/index',
   ],
+  subpackages: [
+    {
+      'root': 'pages/goods',
+      'pages': [
+        'pages/goodsInfo/index'
+      ]
+    }
+  ],
   tabBar: {
     color: '#000',
     selectedColor: '#ff6146',
@@ -39,6 +47,6 @@ export default {
     backgroundTextStyle: 'light',
     navigationBarBackgroundColor: '#36c1ba',
     navigationBarTitleText: 'WeChat',
-    navigationBarTextStyle: 'black'
+    navigationBarTextStyle: 'white'
   }
 }
