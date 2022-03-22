@@ -1,1 +1,2 @@
-export const previewImgUrl = 'http://192.168.2.197:3001/public/upload/';
+import { baseUrl } from "../service/request";
+export const previewImgUrl = `${baseUrl}/public/upload/`;

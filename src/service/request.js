@@ -1,5 +1,5 @@
 import Taro from '@tarojs/taro'
-const baseUrl = 'http://192.168.2.197:3001';
+export const baseUrl = 'http://192.168.0.103:3001';
 export const request = ({url, method, data}) => {
 
   return new Promise(((resolve, reject) => {
