@@ -1,0 +1,27 @@
+@import "../../../../base.less";
+.goods-info-container{
+  .swiper-box{
+    height: 600px;
+    .swiper-img{
+      width: 100%;
+      height: 100%;
+    }
+  }
+  .price{
+    padding: @basePadding;
+    .sell-price{
+      color: @priceColor;
+      font-size: @normalSize;
+      .origin-price{
+        margin-left: @halfBasePadding;
+        color: @baseTextColor;
+        font-size: @smallSize;
+        text-decoration: line-through;
+      }
+    }
+    .sold-count{
+      color: @baseTextColor;
+      font-size: @smallSize;
+    }
+  }
+}

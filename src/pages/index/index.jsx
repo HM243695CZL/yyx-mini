@@ -28,14 +28,31 @@ export default function Index(props) {
   const changeTab = index => {
     if (current === index) return false;
     setCurrent(index);
+    let obj = {
+      0: [],
+      1: [{field: 'publishTime', order: 'DESC'}],
+      2: [{field: 'sellCount', order: 'DESC'}],
+      3: [{field: 'originPrice', order: 'ASC'}]
+    };
+    setPageInfo({...pageInfo, multiSortMeta: obj[index]});
+    getDataList({...pageInfo, multiSortMeta: obj[index]});
   };
   useEffect(() => {
     getDataList(pageInfo);
   }, []);
   return (
     <View className='index-container'>
-      <AtTabs current={current} tabList={tabList} onClick={changeTab}>
+      <AtTabs current={current} tabList={tabList} onClick={changeTab} animated={false}>
         <AtTabsPane current={current} index={0} >
+          <GoodsList list={list} />
+        </AtTabsPane>
+        <AtTabsPane current={current} index={1} >
+          <GoodsList list={list} />
+        </AtTabsPane>
+        <AtTabsPane current={current} index={2} >
+          <GoodsList list={list} />
+        </AtTabsPane>
+        <AtTabsPane current={current} index={3} >
           <GoodsList list={list} />
         </AtTabsPane>
       </AtTabs>
