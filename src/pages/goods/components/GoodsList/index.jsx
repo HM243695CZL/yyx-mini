@@ -6,8 +6,11 @@ import './index.less';
 
 export default function GoodsList(props) {
   const { list } = props;
+  const info = Taro.getSystemInfoSync();
   return (
-    <View className='goods-list-container' style='height: 500px'>
+    <View className='goods-list-container' style={{
+      height: (info.windowHeight - 45) + 'px'
+    }}>
       <View className='at-row at-row__justify--between at-row--wrap'>
         {
           list.map(item => {
