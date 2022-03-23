@@ -1,6 +1,7 @@
 import React, {useState} from "react";
 import { View, Image, Text, Swiper, SwiperItem } from '@tarojs/components';
 import Taro, { useRouter, useDidShow } from '@tarojs/taro';
+import { AtIcon } from 'taro-ui';
 import {getGoodsInfoApi} from '../../../../service/goods';
 import './index.less'
 import {RES_STATUS} from '../../../../utils/code';
@@ -38,15 +39,23 @@ export default function GoodsInfo(props) {
           })
         }
       </Swiper>
-      <View className='price flex-between'>
-        <View className='sell-price'>
-          ￥{info.sellPriceStart}
-          {
-            info.sellPriceEnd && <Text>-{info.sellPriceEnd}</Text>
-          }
-          <Text className='origin-price'>￥{info.originPrice}</Text>
+      <View className='info-content'>
+        <View className='price flex-between'>
+          <View className='sell-price'>
+            ￥{info.sellPriceStart}
+            {
+              info.sellPriceEnd && <Text>-{info.sellPriceEnd}</Text>
+            }
+            <Text className='origin-price'>￥{info.originPrice}</Text>
+          </View>
+          <View className='sold-count'>{info.sellCount}人买过</View>
         </View>
-        <View className='sold-count'>{info.sellCount}人买过</View>
+        <View className='goods-title flex-between'>
+          <View className='left'>{info.title}</View>
+          <View className='right'>
+            <AtIcon value='share' color='#000' size='20' />
+          </View>
+        </View>
       </View>
     </View>
   )

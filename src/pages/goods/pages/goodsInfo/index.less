@@ -7,21 +7,35 @@
       height: 100%;
     }
   }
-  .price{
+  .info-content{
     padding: @basePadding;
-    .sell-price{
-      color: @priceColor;
-      font-size: @normalSize;
-      .origin-price{
-        margin-left: @halfBasePadding;
+    .price{
+      padding: @basePadding 0;
+      .sell-price{
+        color: @priceColor;
+        font-size: @normalSize;
+        .origin-price{
+          margin-left: @halfBasePadding;
+          color: @baseTextColor;
+          font-size: @smallSize;
+          text-decoration: line-through;
+        }
+      }
+      .sold-count{
         color: @baseTextColor;
         font-size: @smallSize;
-        text-decoration: line-through;
       }
     }
-    .sold-count{
-      color: @baseTextColor;
-      font-size: @smallSize;
+    .goods-title{
+      padding-bottom: @basePadding;
+      border-bottom: 1px solid @baseBorderColor;
+      .left{
+        flex: 1;
+      }
+      .right{
+        width: 100px;
+        text-align: center;
+      }
     }
   }
 }
